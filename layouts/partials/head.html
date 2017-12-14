@@ -47,6 +47,11 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      location.protocol = 'https:'
+    }
+  </script>
+  <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js', { scope: '/' });
