@@ -1,0 +1,186 @@
+@import '_vars.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  font-family: Roboto, Helvetica, sans-serif;
+  background: $background-color;
+  display: flex;
+  color: #1e2021
+}
+
+@media (max-width: 799px) {
+  html, body {
+    flex-direction: column;
+  }
+}
+
+a {
+  color: #1e2021;
+  text-decoration: none;
+  padding: 0 1px;
+  font-weight: bold;
+  background-image: linear-gradient(120deg, $js-yellow 1%, $js-yellow 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.35em;
+  background-position: 0 88%;
+  transition: background-size 0.15s ease-in;
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+a.image-link {
+  background: none !important;
+}
+
+mark {
+  background-color: $js-yellow;
+  padding: 3px;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  display: block;
+  background: $js-yellow;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  box-sizing: content-box;
+  width: 80%;
+  margin: 1em auto;
+}
+
+.small {
+  font-size: 0.7em;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@import "sidebar.scss";
+@import "menu.scss";
+
+main {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+}
+
+main > div {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Desktop overrides */
+@media (min-width: 800px) {
+  main {
+    width: 60vw;
+  }
+}
+
+main {
+  time {
+    font-size: 0.9em;
+    color: #5d5c5c;
+    font-weight: bold;
+  }
+
+  h1 {
+    margin: 0.4em 0;
+  }
+
+  h2 {
+    margin-top: 2em;
+  }
+}
+
+.address {
+  font-size: 0.9em;
+
+  &::before {
+    content: '📍';
+  }
+}
+
+.agenda {
+  list-style: none;
+  padding: 0;
+
+  time {
+    font-weight: bold;
+  }
+
+  li::before {
+    content: attr(data-time);
+  }
+
+  li > div {
+    border-left: 1px dashed #ccc;
+    margin: 2px 20px 0;
+    padding: 5px 20px 20px;
+
+    &::before {
+      content: attr(data-time);
+      position:relative;
+      top: 50%;
+    }
+  }
+
+  .agenda-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  &::after {
+    content: '👋';
+    position: relative;
+    left: 0.5em;
+  }
+
+}
+
+.archive {
+  section {
+    margin-bottom: 3em;
+    padding-bottom: 1em;
+    border-bottom: 5px solid black;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+}
+
+.speakers {
+  display: inline-block;
+
+  figure {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="sidebar">
+  <div class="logo">
+    <a href="/" name="Logo" class="image-link">{{> logo }}</a>
+  </div>
+
+  <p class="subheading">
+    {{ site.description }}
+  </p>
+
+  <div class="join">
+    <a href="{{ meetup.url }}">
+      <div class="small">Join {{#if meetup.count}}{{ meetup.count }} others{{else}}us{{/if}}</div>
+      RSVP TODAY
+    </a>
+  </div>
+
+  <footer>
+    <div>
+        All attendees and speakers must follow our <a href="/codeofconduct">Code of Conduct</a>. This applies to our physical meetup and online interactions.
+    </div>
+  </footer>
+</div>
+
+{{> menu }}

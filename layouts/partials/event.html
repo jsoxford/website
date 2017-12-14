@@ -1,0 +1,44 @@
+<div>
+  <time datetime="{{ moment date '' }}">{{moment date 'dddd, Do MMMM YYYY' }}</time>
+  <h1>
+    <a href="{{ getLink this }}">{{ title }}</a>
+  </h1>
+
+  <div class="address">
+    <a href="https://www.google.co.uk/maps?q={{address}}">{{ address }}</a>
+  </div>
+
+  <p>{{{ md summary }}}</p>
+
+  <h2>Agenda</h2>
+  <ul class="agenda">
+    {{#each agenda}}
+      <li>
+        <time>{{ this.time }}</time>
+        <div>
+          <div class="agenda-title">{{{ md this.title }}}</div>
+          <div>{{{ md this.description }}}</div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+
+  <p>
+    <em>Please make sure you read and agree to our <a href="/codeofconduct">Code of Conduct</a> before attending.</em>
+  </p>
+
+  <h2>Sponsors</h2>
+  <p>
+    Thank you to our sponsors that have made it possible to run this event and build our community.
+  </p>
+  <div>
+    {{#each sponsors}}
+      <a href="{{url}}" target="_blank" rel="noopener" class="image-link"><img src="{{logo}}" title="{{name}}" /></a>
+    {{/each}}
+  </div>
+
+  <h2>Extras</h2>
+  <p>We're always on the look out for new speakers to come and give a talk. If you have a talk that you'd like to present, please <a href="https://github.com/jsoxford/events/issues/new?labels=talk+proposal">Open an Issue</a> and we'll contact you to arrange a date.</p>
+  <p>We are very keen to encourage <strong>new speakers</strong>. If you think you'd like to get into public speaking but don't know where to start please <a href="mailto:organisers@jsoxford.com">Get in Touch</a> with us or take a look at our <a href="/speakers/">Speaker Resources</a>. We'll do everything we can to develop your speaking skills.</p>
+  <p>Come and chat with us on <a href="https://twitter.com/JSOxford" target="_blank" rel="noopener">Twitter</a> or <a href="https://digitaloxford.herokuapp.com/" target="_blank" rel="noopener">Slack</a>. See videos of past events on our <a href="https://www.youtube.com/channel/UCjXR8G5M-iwkHVF26AFFsCQ" target="_blank" rel="noopener">YouTube</a>.</p>
+</div>

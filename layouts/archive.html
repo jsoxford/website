@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+
+  <body>
+
+    {{> sidebar }}
+
+    <main>
+      <div class="archive">
+        {{#each pagination.files }}
+          <section>
+            <div>
+              <time datetime="{{ moment date '' }}">{{moment date 'dddd, Do MMMM YYYY' }}</time>
+              <h1>
+                <a href="{{ getLink this }}">{{ title }}</a>
+              </h1>
+
+              <div class="address">
+                <a href="https://www.google.co.uk/maps?q={{address}}">{{ address }}</a>
+              </div>
+
+              <p>{{ summary }}</p>
+            </div>
+          </section>
+        {{/each}}
+      </div>
+
+      <div class="pagination">
+        {{#if pagination.previous}}
+          <a href="/{{pagination.previous.path}}">&larr; Newer Events</a>
+          {{#if pagination.next}}
+            |
+          {{/if}}
+        {{/if}}
+        {{#if pagination.next}}
+          <a href="/{{pagination.next.path}}">Older Events &rarr;</a>
+        {{/if}}
+      </div>
+
+    </main>
+
+  </body>
+
+</html>

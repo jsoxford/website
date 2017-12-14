@@ -1,0 +1,58 @@
+---
+layout: page.html
+title: Speakers
+---
+
+<h1>
+  <a href="/{{lowerCase title}}/">Speaker Resources</a>
+</h1>
+
+<h2>Blogs and Articles</h2>
+
+<ul>
+  <li>
+    <a href="http://www.railstips.org/blog/archives/2010/05/05/improve-your-presentations-in-under-50/">Improve Your Presentations In Under $50</a>
+  </li>
+  <li>
+    <a href="https://medium.com/@dellsystem/i-cant-read-your-slides-737acde6e9dc">I can’t read your slides</a>
+  </li>
+  <li>
+    <a href="https://zachholman.com/posts/slide-design-for-developers/">Slide Design for Developers</a>
+  </li>
+  <li>
+    <a href="http://weareallaweso.me/">You would make an awesome speaker</a>
+  </li>
+  <li>
+    <a href="https://github.com/coryhouse/speaker-starter-kit/blob/master/README.md">Technical Speaker Starter Kit</a>
+  </li>
+  <li>
+    <a href="http://www.metadevelopment.io/guide-to-public-speaking/">A Short Guide To Public Speaking (for Tech Conferences)</a>
+  </li>
+</ul>
+
+<h2>Books</h2>
+
+<ul>
+  <li>
+    <a href="https://abookapart.com/products/demystifying-public-speaking">Demystifying Public Speaking</a>
+  </li>
+</ul>
+
+<h2>Our Awesome Speakers</h2>
+
+<div>
+  {{#each collections.events }}
+    {{#each this.speakers}}
+      <div class="speakers">
+        <figure>
+          <img src="{{this.image}}" alt="{{this.name}}">
+          <figcaption>
+            <a href="https://www.twitter.com/{{this.twitter}}">
+              {{this.name}}
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    {{/each}}
+  {{/each}}
+</div>
