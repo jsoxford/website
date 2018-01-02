@@ -11,10 +11,10 @@ async function fetchMeetupDetails() {
   const req = await r2.get(latestEventURL);
   const result = await req.json;
 
-  if (result.json && result.json[0]) {
+  if (result && result[0]) {
     return {
-      url: result.json.link,
-      count: result.json.yes_rsvp_count
+      url: result[0].link,
+      count: result[0].yes_rsvp_count
     };
   }
 
