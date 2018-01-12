@@ -7,6 +7,16 @@ renderer.paragraph = function(text) {
   return text;
 }
 
+const dedupe = (events, arr) => {
+  const deduped = {};
+  events && events.forEach(event => {
+    event[arr] && event[arr].forEach(item => {
+      deduped[item.name] = item;
+    });
+  });
+  return Object.values(deduped);
+}
+
 module.exports = {
   'moment': function(date, format) {
     return new moment(date).format(format);
@@ -36,23 +46,9 @@ module.exports = {
     return context ? context.toLowerCase() : '';
   },
   'getSpeakers': function(events) {
-    const speakers = {}
-    events && events.forEach(event => {
-      event.speakers && event.speakers.forEach(speaker => {
-        speakers[speaker.name] = speaker;
-      });
-    });
-
-    return Object.values(speakers);
+    return dedupe(events, 'speakers');
   },
   'getSponsors': function(events) {
-    const sponsors = {}
-    events.forEach(event => {
-      event.sponsors.forEach(sponsor => {
-        sponsors[sponsor.name] = sponsor;
-      });
-    });
-
-    return Object.values(sponsors);
+    return dedupe(events, 'sponsors');
   }
 }
