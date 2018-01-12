@@ -99,18 +99,16 @@ title: Speakers
 <h2>Our Awesome Speakers</h2>
 
 <div>
-  {{#each collections.events }}
-    {{#each this.speakers}}
-      <div class="speakers">
-        <figure>
-          <img src="{{this.image}}" alt="{{this.name}}">
-          <figcaption>
-            <a href="https://www.twitter.com/{{this.twitter}}">
-              {{this.name}}
-            </a>
-          </figcaption>
-        </figure>
-      </div>
-    {{/each}}
+  {{#each (getSpeakers collections.events) }}
+    <div class="speakers">
+      <figure>
+        <img src="{{this.image}}" alt="{{this.name}}">
+        <figcaption>
+          <a href="https://www.twitter.com/{{this.twitter}}">
+            {{this.name}}
+          </a>
+        </figcaption>
+      </figure>
+    </div>
   {{/each}}
 </div>

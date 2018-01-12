@@ -33,5 +33,15 @@ module.exports = {
   },
   'lowerCase': function(context) {
     return context ? context.toLowerCase() : '';
+  },
+  'getSpeakers': function(events) {
+    const speakers = {}
+    events.forEach(event => {
+      event.speakers.forEach(speaker => {
+        speakers[speaker.name] = speaker;
+      });
+    });
+
+    return Object.values(speakers);
   }
 }
