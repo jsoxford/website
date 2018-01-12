@@ -44,5 +44,15 @@ module.exports = {
     });
 
     return Object.values(speakers);
+  },
+  'getSponsors': function(events) {
+    const sponsors = {}
+    events.forEach(event => {
+      event.sponsors.forEach(sponsor => {
+        sponsors[sponsor.name] = sponsor;
+      });
+    });
+
+    return Object.values(sponsors);
   }
 }
