@@ -7,43 +7,10 @@ const inPlace = require('metalsmith-in-place');
 const permalinks = require('metalsmith-permalinks');
 const pagination = require('metalsmith-pagination');
 const Handlebars = require('handlebars');
-const moment = require('moment');
 const {fetchMeetupDetails} = require('./meetup');
-const md = require('marked');
+const handlebarsHelpers = require('./handlebarsHelpers');
 
-// Prevent markdown renderer wrapping all content in paragraphs
-const renderer = new md.Renderer;
-renderer.paragraph = function(text) {
-  return text;
-}
-
-Handlebars.registerHelper('moment', function(date, format) {
-  return new moment(date).format(format);
-});
-Handlebars.registerHelper('withFirst', function(context, options) {
-  return options.fn(context[0]);
-});
-Handlebars.registerHelper('coalesce', function() {
-  const len = arguments.length;
-  for (let i = 0; i < len - 1; i ++) {
-    if (arguments[i]) {
-      return arguments[i];
-    }
-  }
-  return;
-});
-Handlebars.registerHelper('getLink', function(context, options) {
-  const d = moment(context.date).format('YYYY-MM-DD');
-  const title = (context.title || '').replace(/\W+/g, '-');
-  return `/${d}-${title}/`.toLowerCase();
-});
-Handlebars.registerHelper('md', function(context) {
-  return md(context, { renderer: renderer });
-});
-Handlebars.registerHelper('lowerCase', function(context) {
-  return context ? context.toLowerCase() : '';
-});
-
+Object.keys(handlebarsHelpers).forEach(name => Handlebars.registerHelper(name, handlebarsHelpers[name]))
 
 async function build() {
   const meetupDetails = await fetchMeetupDetails();
