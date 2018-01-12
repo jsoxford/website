@@ -41,6 +41,10 @@ a.image-link {
   background: none !important;
 }
 
+img {
+  max-width: 100%;
+}
+
 mark {
   background-color: $js-yellow;
   padding: 3px;
