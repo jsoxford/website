@@ -28,16 +28,17 @@ module.exports = {
     const title = (context.title || '').replace(/\W+/g, '-');
     return `/${d}-${title}/`.toLowerCase();
   },
-  'md': function(context) {
-    return md(context, { renderer: renderer });
+  'md': function(context, skipRenderer) {
+    const options = skipRenderer ? undefined : { renderer: renderer };
+    return context ? md(context, options) : context;
   },
   'lowerCase': function(context) {
     return context ? context.toLowerCase() : '';
   },
   'getSpeakers': function(events) {
     const speakers = {}
-    events.forEach(event => {
-      event.speakers.forEach(speaker => {
+    events && events.forEach(event => {
+      event.speakers && event.speakers.forEach(speaker => {
         speakers[speaker.name] = speaker;
       });
     });
