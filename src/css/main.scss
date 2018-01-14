@@ -170,7 +170,7 @@ main {
   }
 }
 
-.speakers {
+.speakers, .sponsors {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -189,5 +189,19 @@ main {
     figcaption {
       text-align: center;
     }
+  }
+}
+
+.sponsors figure {
+  margin-top: 15px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  img {
+    max-width: 90%;
+    max-height: 200px;
   }
 }

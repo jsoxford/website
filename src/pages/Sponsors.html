@@ -13,17 +13,15 @@ title: Sponsors
 
 <h2>Our Wonderful Sponsors <small>(Past and Present)</small></h2>
 
-<div>
+<div class="sponsors">
   {{#each (getSponsors collections.events) }}
-    <div class="speakers">
-      <figure>
-        <img src="{{this.logo}}" alt="{{this.name}}">
-        <figcaption>
-          <a href="{{this.url}}">
-            {{this.name}}
-          </a>
-        </figcaption>
-      </figure>
-    </div>
+    <figure>
+      <img src="{{this.logo}}" alt="{{this.name}}">
+      <figcaption>
+        <a href="{{this.url}}">
+          {{this.name}}
+        </a>
+      </figcaption>
+    </figure>
   {{/each}}
 </div>
