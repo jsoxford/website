@@ -25,7 +25,7 @@ module.exports = {
   },
   'getLink': function(context, options) {
     const d = moment(context.date).format('YYYY-MM-DD');
-    const title = (context.title || '').replace(/\W+/g, '-');
+    const title = (context.title || '').replace(/\W+/g, '-').replace(/-$/g, '');
     return `/${d}-${title}/`.toLowerCase();
   },
   'md': function(context, skipRenderer) {
