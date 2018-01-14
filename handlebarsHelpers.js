@@ -7,10 +7,10 @@ renderer.paragraph = function(text) {
   return text;
 }
 
-const dedupe = (events, arr) => {
+const dedupe = key => events => {
   const deduped = {};
   events && events.forEach(event => {
-    event[arr] && event[arr].forEach(item => {
+    event[key] && event[key].forEach(item => {
       deduped[item.name] = item;
     });
   });
@@ -45,10 +45,6 @@ module.exports = {
   'lowerCase': function(context) {
     return context ? context.toLowerCase() : '';
   },
-  'getSpeakers': function(events) {
-    return dedupe(events, 'speakers');
-  },
-  'getSponsors': function(events) {
-    return dedupe(events, 'sponsors');
-  }
+  'getSpeakers': dedupe('speakers'),
+  'getSponsors': dedupe('sponsors')
 }
