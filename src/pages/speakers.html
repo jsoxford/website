@@ -101,7 +101,9 @@ title: Speakers
 <div class="speakers">
   {{#each (getSpeakers collections.events) }}
     <figure>
-      <img src="{{this.image}}" alt="{{this.name}}">
+      <a href="https://www.twitter.com/{{this.twitter}}">
+        <img src="https://twitter-profile-pic.jsoxford.com/{{this.twitter}}?size=200x200" alt="{{this.name}}">
+      </a>
       <figcaption>
         <a href="https://www.twitter.com/{{this.twitter}}">
           {{this.name}}
