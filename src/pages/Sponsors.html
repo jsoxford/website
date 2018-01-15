@@ -1,0 +1,27 @@
+---
+layout: page.html
+title: Sponsors
+---
+
+<h1>
+  <a href="/{{lowerCase title}}/">{{ title }}</a>
+</h1>
+
+<p>
+  JSOxford can only operate thanks to the kind support of our sponsors. Sponsors help us cover costs including, but not limited to, venue hire, event insurance and refreshments. We thank each for their support.
+</p>
+
+<h2>Our Wonderful Sponsors <small>(Past and Present)</small></h2>
+
+<div class="sponsors">
+  {{#each (getSponsors collections.events) }}
+    <figure>
+      <img src="{{this.logo}}" alt="{{this.name}}">
+      <figcaption>
+        <a href="{{this.url}}">
+          {{this.name}}
+        </a>
+      </figcaption>
+    </figure>
+  {{/each}}
+</div>
