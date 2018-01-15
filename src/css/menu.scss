@@ -45,6 +45,10 @@ menu {
       height: 40px;
     }
 
+    &:last-child {
+      padding-top: 18px;
+    }
+
     a {
       color: #1e2021;
       background-image: linear-gradient(120deg, #ffffff 1%, #ffffff 100%);

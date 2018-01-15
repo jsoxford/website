@@ -60,3 +60,6 @@ typings/
 build
 package-lock.json
 tmp
+
+# Ignore Mac DS_Store files
+.DS_Store
