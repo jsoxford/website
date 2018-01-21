@@ -19,7 +19,7 @@ async function build() {
       site : {
         title: 'JSOxford',
         url: 'http://jsoxford-next.marcusnoble.co.uk', //'https://jsoxford.com',
-        description: 'A monthly meetup of JavaScript enthusiasts in Oxford, UK.'
+        description: 'A regular meetup of JavaScript enthusiasts every other month in Oxford, UK.'
       },
       meetup: meetupDetails
     })
