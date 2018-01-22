@@ -131,6 +131,11 @@ main {
     font-weight: bold;
   }
 
+  p {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
   li::before {
     content: attr(data-time);
   }
