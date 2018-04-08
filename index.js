@@ -18,7 +18,7 @@ async function build() {
     .metadata({
       site : {
         title: 'JSOxford',
-        url: 'http://jsoxford-next.marcusnoble.co.uk', //'https://jsoxford.com',
+        url: 'https://jsoxford.com',
         description: 'A regular meetup of JavaScript enthusiasts every other month in Oxford, UK.'
       },
       meetup: meetupDetails
