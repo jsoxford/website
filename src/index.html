@@ -2,5 +2,9 @@
 layout: layout.html
 ---
 {{#withFirst collections.events }}
-  {{> event}}
+  {{#isEvent}}
+    {{> event}}
+  {{else}}
+    {{> post }}
+  {{/isEvent}}
 {{/withFirst}}
