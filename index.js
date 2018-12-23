@@ -28,7 +28,7 @@ async function build() {
     .clean(true)
     .use(collections({
       events: {
-        pattern: 'events/*',
+        pattern: '{events,posts}/*',
         sortBy: 'date',
         reverse: true,
       },

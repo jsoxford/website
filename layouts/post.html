@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+
+  <body>
+
+    {{> sidebar }}
+
+    <main>
+      <div>
+          <time datetime="{{ moment date '' }}">{{moment date 'dddd, Do MMMM YYYY' }}</time>
+          <h1>
+            <a href="{{ getLink this }}">{{ title }}</a>
+          </h1>
+
+          {{{ contents }}}
+      </div>
+
+    </main>
+
+  </body>
+
+</html>

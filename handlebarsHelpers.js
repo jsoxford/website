@@ -46,5 +46,11 @@ module.exports = {
     return context ? context.toLowerCase() : '';
   },
   'getSpeakers': dedupe('speakers'),
-  'getSponsors': dedupe('sponsors')
+  'getSponsors': dedupe('sponsors'),
+  'isEvent': function(context) {
+    if (this.layout === 'event.html') {
+      return context.fn(this);
+    }
+    return context.inverse(this);
+  }
 }
