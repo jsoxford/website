@@ -10,6 +10,24 @@
 
   <p>{{{ md summary }}}</p>
 
+  {{#if speakers}}
+    <h2>Speakers</h2>
+    <div class="speakers">
+      {{#each speakers}}
+        <figure>
+          <a href="https://www.twitter.com/{{this.twitter}}">
+            <img src="https://twitter-profile-pic.jsoxford.com/{{this.twitter}}?size=bigger" alt="{{this.name}}">
+          </a>
+          <figcaption>
+            <a href="https://www.twitter.com/{{this.twitter}}">
+              {{this.name}}
+            </a>
+          </figcaption>
+        </figure>
+      {{/each}}
+    </div>
+  {{/if}}
+
   {{#if videos}}
     <h2>Recordings</h2>
     {{#each videos}}
