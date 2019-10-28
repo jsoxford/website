@@ -224,3 +224,8 @@ main {
     max-height: 200px;
   }
 }
+
+blockquote {
+  border-left: 8px solid $js-yellow;
+  padding-left: 6px;
+}
